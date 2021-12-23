@@ -1,0 +1,5 @@
+FROM nginx:alpine
+
+COPY proxy.conf /etc/nginx/nginx.conf
+COPY proxy.selfsigned.crt /etc/ssl/certs/nginx-selfsigned.crt
+COPY proxy.selfsigned.key /etc/ssl/certs/nginx-selfsigned.key

@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+    proxy-jitpay:
+        container_name: proxy_nginx
+        # image: nginx:alpine
+        build:
+          context: .
+          dockerfile: Dockerfile.proxy
+
+        # build:
+        #     context: .
+        # volumes:
+        #   - ./proxy.conf:/etc/nginx/nginx.conf
+        ports:
+            - "443:443"
+            # - "80:80"
+        # command: [nginx-debug, '-g', 'daemon off;']
+         # command: nginx
+    # onboarding:
+    #     container_name: onboardikng_server
+    #     build:
+    #         context: .
+    #         dockerfile: Dockerfile
+    #         args:
+    #            BUILD_ENV: staging
+    #     ports:
+    #         - "4200:4200"
